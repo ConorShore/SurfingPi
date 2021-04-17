@@ -23,8 +23,9 @@ then
       echo "Leave user and pass the same"
 else
       echo "Updating user and pass"
-      echo $user_var > /home/$USER/surf
-      echo $pass_var >> /home/$USER/surf
+      mkdir /home/$USER/.surfshark/
+      echo $user_var > /home/$USER/.surfshark/surf
+      echo $pass_var >> /home/$USER/.surfshark/surf
 fi
 
 echo 
