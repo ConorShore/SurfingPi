@@ -2,7 +2,12 @@
 Helper scripts for setting up and using SurfShark with a Raspberry Pi
 
 ## Setup
-Clone this repo, cd into the new folder created, then run configure script with:
+Clone this repo and cd into the directory with these two commands:
+
+    git clone git@github.com:ConorShore/SurfingPi.git
+    cd SurfingPi
+
+Then run configure script with:
   
     ./configure.sh
    
@@ -26,3 +31,8 @@ If you're having trouble connecting, try running
     ./update_surf_conf.sh
    
 From the SurfingPi folder, sometimes an update is required before you can connect to the VPN
+
+## Uninstall
+
+Run the included uninstall script when cd into the SurfingPi folder with:
+    ./uninstall
