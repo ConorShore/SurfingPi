@@ -11,7 +11,7 @@ Once this is done, your credentials will be stored in ~/.surfshark/surf
 
 This config process will generate a file called surfstart in /usr/bin. This is what you will use to connect to the VPN. 
 
-## Using
+## Usage
 
 To connect to the VPN, simply run this command
 
