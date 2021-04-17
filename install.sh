@@ -15,7 +15,7 @@ if [ "$PREREQ_PACKAGES_TO_INSTALL" ]; then
 fi
 
 cd /opt/
-sudo git clone git@github.com:ConorShore/SurfingPi.git
+sudo git clone https://github.com/ConorShore/SurfingPi.git
 cd SurfingPi
 ./configure
 
