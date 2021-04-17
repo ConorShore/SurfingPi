@@ -4,7 +4,7 @@ echo
 read -n1 -p "Do you want to update surfshark configs first? [y,n]  " doit
 case $doit in  
   y|Y) echo "Updating configs"  
-  	./update_surf_conf.sh ;;
+  	/opt/Surfshark/update_surf_conf.sh ;;
   n|N) echo "Skipping update" ;; 
   *) echo "Please answer y or n" ;; 
 esac
