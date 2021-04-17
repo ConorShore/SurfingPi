@@ -41,10 +41,14 @@ select tcpendpoint in $tcpendpoints
 do
 echo "$tcpendpoint endpoint selected"
 
-echo "#!/bin/bash" > surfstart.sh
-echo "sudo openvpn /etc/openvpn/$tcpendpoint" >> surfstart.sh
-echo "surfstart.sh created!"
-chmod +x surfstart.sh
+echo "#!/bin/bash" > /usr/bin/surfstart.sh
+echo "sudo openvpn /etc/openvpn/$tcpendpoint" >> surfstart
+echo "surfstart created!"
+echo "Adding to /usr/bin/"
+echo
+sudo cp surfstart /usr/bin/surfstart
+rm surfstart
+sudo chmod +x /usr/bin/surfstart
 break
 done
 
@@ -55,9 +59,13 @@ udpendpoints=$(ls /etc/openvpn/ | grep udp)
 select udpendpoint in $udpendpoints
 do
 echo "$udpendpoint endpoint selected"
-echo "#!/bin/bash" > surfstart.sh
-echo "sudo openvpn /etc/openvpn/$udpendpoint" >> surfstart.sh
-chmod +x surfstart.sh
+echo "#!/bin/bash" > /usr/bin/surfstart.sh
+echo "sudo openvpn /etc/openvpn/$udpendpoint" >> surfstart
+echo "Adding to /usr/bin"
+echo
+sudo cp surfstart /usr/bin/surfstart
+rm surfstart
+sudo chmod +x /usr/bin/surfstart
 echo "surfstart.sh created!"
 break
 done
