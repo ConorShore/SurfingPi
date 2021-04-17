@@ -2,8 +2,7 @@
 Helper scripts for setting up and using SurfShark with a Raspberry Pi
 
 ## Setup
-Clone this repo first
-Then run configure script with:
+Clone this repo, cd into the new folder created, then run configure script with:
   
     ./configure.sh
    
@@ -19,3 +18,11 @@ To connect to the VPN, simply run this command
     surfstart
   
 This will connect you with the configurations you entered when you ran ./configure.sh
+
+To, for example, change which location you want to connect to, just run the config script again
+
+If you're having trouble connecting, try running
+
+    ./update_surf_conf.sh
+   
+From the SurfingPi folder, sometimes an update is required before you can connect to the VPN
