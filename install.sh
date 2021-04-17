@@ -16,6 +16,6 @@ fi
 
 cd /opt/
 sudo git clone https://github.com/ConorShore/SurfingPi.git
-/opt/SurfingPi/configure.sh
+bash /opt/SurfingPi/configure.sh
 
 
