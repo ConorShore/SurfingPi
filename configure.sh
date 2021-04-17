@@ -10,14 +10,23 @@ case $doit in
 esac
 echo
 echo "Surfshark Credentials"
+echo "Leave these empty if you want to reuse your previous credentials"
 echo "These should be the long random looking username and password from the surfshark manual setup section"
 echo "go to https://my.surfshark.com/vpn/manual-setup/router to get these"
 echo
+
 read -p "username:" user_var
 read -p "password:" pass_var
 
-echo $user_var > /home/$USER/surf
-echo $pass_var >> /home/$USER/surf
+if [ -z "$user_var" ]
+then
+      echo "Leave user and pass the same"
+else
+      echo "Updating user and pass"
+      echo $user_var > /home/$USER/surf
+      echo $pass_var >> /home/$USER/surf
+fi
+
 echo 
 echo "Select which protocol to use"
 select proto in TCP UDP
@@ -30,6 +39,11 @@ tcpendpoints=$(ls /etc/openvpn/ | grep tcp)
 select tcpendpoint in $tcpendpoints
 do
 echo "$tcpendpoint endpoint selected"
+
+echo "#!/bin/bash" > surfstart.sh
+echo "sudo openvpn /etc/openvpn/$tcpendpoint" >> surfstart.sh
+echo "surfstart.sh created!"
+chmod +x surfstart.sh
 break
 done
 
@@ -40,6 +54,10 @@ udpendpoints=$(ls /etc/openvpn/ | grep udp)
 select udpendpoint in $udpendpoints
 do
 echo "$udpendpoint endpoint selected"
+echo "#!/bin/bash" > surfstart.sh
+echo "sudo openvpn /etc/openvpn/$udpendpoint" >> surfstart.sh
+chmod +x surfstart.sh
+echo "surfstart.sh created!"
 break
 done
 
