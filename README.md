@@ -35,4 +35,5 @@ From the SurfingPi folder, sometimes an update is required before you can connec
 ## Uninstall
 
 Run the included uninstall script when cd into the SurfingPi folder with:
+
     ./uninstall
