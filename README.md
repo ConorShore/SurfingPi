@@ -40,10 +40,10 @@ If you're having trouble connecting, try running
 
     /opt/SurfingPi/update_surf_conf.sh
    
-From the SurfingPi folder, sometimes an update is required before you can connect to the VPN
+sometimes an update is required before you can connect to the VPN
 
 ## Uninstall
 
-Run the included uninstall script when cd into the SurfingPi folder with:
+Run the included uninstall script with:
 
     /opt/SurfingPi/uninstall.sh
