@@ -41,8 +41,7 @@ else
 fi
 
 echo
-sudo cp /opt/SurfingPi/surfpointer.sh /usr/bin/surfstart
-sudo chmod +x /usr/bin/surfstart
+
 
 echo "Select which protocol to use"
 select proto in TCP UDP; do
