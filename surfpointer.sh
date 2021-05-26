@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "SurfingPi, Surfshark Raspberry Pi help by Conor Shore 2021"
 
-if [["$#" -gt 0]]; then
+if ["$#" -gt 0]; then
 
     key="$1"
 
