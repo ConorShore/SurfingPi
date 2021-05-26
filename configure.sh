@@ -4,7 +4,16 @@ echo
 read -n1 -p "Do you want to update surfshark configs first? [y,n]  " doit
 case $doit in  
   y|Y) echo "Updating configs"  
-  	/opt/SurfingPi/update_surf_conf.sh ;;
+  	cd /etc/openvpn
+      sudo rm *
+      sudo wget https://my.surfshark.com/vpn/api/v1/server/configurations
+      sudo unzip configurations
+      sudo rm configurations
+      echo "Modifiying configs to use userpass file"
+
+      sudo grep -rl "auth-user-pass" /etc/openvpn/ | sudo xargs sed -i "s>auth-user-pass>auth-user-pass /home/$USER/.surfshark/surf>g"
+      echo "done"
+      echo ;;
   n|N) echo "Skipping update" ;; 
   *) echo "Please answer y or n" ;; 
 esac
