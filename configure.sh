@@ -62,7 +62,7 @@ udpendpoints=$(ls /etc/openvpn/ | grep udp)
 select udpendpoint in $udpendpoints
 do
 echo "$udpendpoint endpoint selected"
-sudo chmod -R +777 /opt/SurfingPi
+sudo chmod -R 777 /opt/SurfingPi
 echo "#!/bin/bash" > /opt/SurfingPi/surfstart
 echo "sudo openvpn /etc/openvpn/$udpendpoint" >> /opt/SurfingPi/surfstart
 echo "Adding to /usr/bin"
@@ -71,7 +71,7 @@ sudo cp /opt/SurfingPi/surfstart /usr/bin/surfstart
 sudo rm /opt/SurfingPi/surfstart
 sudo /opt/SurfingPi/chmod +x /usr/bin/surfstart
 echo "surfstart created!"
-sudo chmod -R +755 /opt/SurfingPi
+sudo chmod -R 755 /opt/SurfingPi
 break
 done
 
