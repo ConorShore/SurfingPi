@@ -41,9 +41,8 @@ tcpendpoints=$(ls /etc/openvpn/ | grep tcp)
 select tcpendpoint in $tcpendpoints
 do
 echo "$tcpendpoint endpoint selected"
-sudo chmod -R +775 /opt/SurfingPi
+sudo chmod -R +777 /opt/SurfingPi
 
-sudo chmod -R 
 echo "#!/bin/bash" > surfstart
 echo "sudo openvpn /etc/openvpn/$tcpendpoint" >> surfstart
 echo "Adding to /usr/bin/"
