@@ -41,13 +41,15 @@ tcpendpoints=$(ls /etc/openvpn/ | grep tcp)
 select tcpendpoint in $tcpendpoints
 do
 echo "$tcpendpoint endpoint selected"
+sudo chmod -R 775 /opt/SurfingPi
 
+sudo chmod -R 
 echo "#!/bin/bash" > surfstart
 echo "sudo openvpn /etc/openvpn/$tcpendpoint" >> surfstart
 echo "Adding to /usr/bin/"
 echo
 sudo cp surfstart /usr/bin/surfstart
-rm surfstart
+sudo rm surfstart
 sudo chmod +x /usr/bin/surfstart
 echo "surfstart created!"
 break
@@ -78,3 +80,4 @@ esac
 break
 done
 
+sudo chmod -R 755 /opt/SurfingPi
