@@ -8,14 +8,17 @@ then
 
     case $key in
     -u | --uninstall)
+        echo "Uninstalling"
         /opt/SurfingPi/uninstall.sh
         exit
         ;;
     -c | --configure)
+        echo "Configuring"
         /opt/SurfingPi/configure.sh
         exit
         ;;
-    -l | --reload)
+    -r | --reload)
+        echo "Reloading configs"
         /opt/SurfingPi/update_surf_conf.sh
         exit
         ;;
@@ -23,7 +26,7 @@ then
         echo "Unknown Option"
         echo "-u | --uninstall  will remove SurfingPi"
         echo "-c | --configure  will let you configure SurfingPi"
-        echo "-l | --reload     will redownload the vpn configs from surfsharl"
+        echo "-r | --reload     will redownload the vpn configs from surfshark"
         ;;
     esac
 
