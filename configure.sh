@@ -26,6 +26,7 @@ else
       mkdir /home/$USER/.surfshark/
       echo $user_var > /home/$USER/.surfshark/surf
       echo $pass_var >> /home/$USER/.surfshark/surf
+      sudo chmod -R 600 /home/$USER/.surfshark
 fi
 
 echo 
