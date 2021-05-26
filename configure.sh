@@ -23,6 +23,7 @@ then
       echo "Leave user and pass the same"
 else
       echo "Updating user and pass"
+      sudo rm /home/$USER/.surfshark/surf
       mkdir /home/$USER/.surfshark/
       sudo echo $user_var > /home/$USER/.surfshark/surf
       sudo echo $pass_var >> /home/$USER/.surfshark/surf
