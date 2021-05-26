@@ -1,7 +1,8 @@
 #!/bin/bash
 echo "SurfingPi, a Surfshark VPN Raspberry Pi helper by Conor Shore 2021"
 
-if [ "$#" -gt 0 ] then
+if [ "$#" -gt 0 ]
+then
 
     key="$1"
 
