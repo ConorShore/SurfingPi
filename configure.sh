@@ -43,8 +43,8 @@ do
 echo "$tcpendpoint endpoint selected"
 sudo chmod -R +777 /opt/SurfingPi
 
-sudo echo "#!/bin/bash" > surfstart
-sudo echo "sudo openvpn /etc/openvpn/$tcpendpoint" >> surfstart
+sudo echo "#!/bin/bash" > /opt/SurfingPi/surfstart
+sudo echo "sudo openvpn /etc/openvpn/$tcpendpoint" >> /opt/SurfingPi/surfstart
 echo "Adding to /usr/bin/"
 echo
 sudo cp surfstart /usr/bin/surfstart
