@@ -41,7 +41,7 @@ tcpendpoints=$(ls /etc/openvpn/ | grep tcp)
 select tcpendpoint in $tcpendpoints
 do
 echo "$tcpendpoint endpoint selected"
-sudo chmod -R 775 /opt/SurfingPi
+sudo chmod -R +775 /opt/SurfingPi
 
 sudo chmod -R 
 echo "#!/bin/bash" > surfstart
@@ -80,4 +80,4 @@ esac
 break
 done
 
-sudo chmod -R 755 /opt/SurfingPi
+sudo chmod -R +755 /opt/SurfingPi
