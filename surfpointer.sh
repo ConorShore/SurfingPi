@@ -1,7 +1,7 @@
 #!/bin/bash
-echo "SurfingPi, Surfshark Raspberry Pi help by Conor Shore 2021"
+echo "SurfingPi, a Surfshark VPN Raspberry Pi help by Conor Shore 2021"
 
-if ["$#" -gt 0] then
+if ["$#" -gt 0]; then
 
     key="$1"
 
@@ -25,5 +25,7 @@ if ["$#" -gt 0] then
         echo "-l | --reload     will redownload the vpn configs from surfsharl"
         ;;
     esac
+
 fi
+
 sudo /opt/SurfingPi/surfstart
