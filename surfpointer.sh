@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo /opt/bin/SurfingPi/surfstart
+sudo /opt/SurfingPi/surfstart
