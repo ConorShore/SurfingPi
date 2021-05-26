@@ -15,8 +15,8 @@ echo "These should be the long random looking username and password from the sur
 echo "go to https://my.surfshark.com/vpn/manual-setup/router to get these"
 echo
 
-sudo read -p "username:" user_var
-sudo read -p "password:" pass_var
+read -p "username:" user_var
+read -p "password:" pass_var
 
 if [ -z "$user_var" ]
 then
