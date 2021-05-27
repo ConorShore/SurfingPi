@@ -22,12 +22,12 @@ if [ "$#" -gt 0 ]; then
         exit
         ;;
     start)
-        echo "Starting SurfingPi"
+        echo "SurfingPi service started"
         sudo systemctl start SurfingPi.service
         exit
         ;;
     stop)
-        echo "Stopping SurfingPi"
+        echo "SurfingPi service stopped"
         sudo systemctl stop SurfingPi.service
         exit
         ;;

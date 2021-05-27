@@ -104,5 +104,5 @@ if [[ $(sudo systemctl status SurfingPi.service | grep "active (running)") ]]; t
       SurfingPi stop >/dev/null
       SurfingPi start >/dev/null
 else
-      echo "No SurfingPi require"
+      echo "No SurfingPi restart required"
 fi
