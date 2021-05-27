@@ -97,6 +97,8 @@ select proto in TCP UDP; do
       break
 done
 
+echo "finished"
+
 if [[ $(sudo systemctl start SurfingPi.service) ]]; then
       echo "Restarting SurfingPi"
       SurfingPi stop
