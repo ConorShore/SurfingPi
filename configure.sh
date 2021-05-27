@@ -64,12 +64,12 @@ select proto in TCP UDP; do
             select tcpendpoint in $tcpendpoints; do
                   echo "$tcpendpoint endpoint selected"
                   sudo chmod -R 777 /opt/SurfingPi
-                  sudo echo "#!/bin/bash" >/opt/SurfingPi/surfstart
-                  sudo echo "sudo openvpn /etc/openvpn/$tcpendpoint" >>/opt/SurfingPi/surfstart
+                  sudo echo "#!/bin/bash" >/opt/SurfingPi/SurfingPi
+                  sudo echo "sudo openvpn /etc/openvpn/$tcpendpoint" >>/opt/SurfingPi/SurfingPi
                   echo "Adding to /usr/bin/"
                   echo
-                  sudo chmod +x /opt/SurfingPi/surfstart
-                  echo "surfstart created!"
+                  sudo chmod +x /opt/SurfingPi/SurfingPi
+                  echo "SurfingPi script created!"
                   sudo chmod -R 755 /opt/SurfingPi
                   break
             done
@@ -81,12 +81,12 @@ select proto in TCP UDP; do
             select udpendpoint in $udpendpoints; do
                   echo "$udpendpoint endpoint selected"
                   sudo chmod -R 777 /opt/SurfingPi
-                  echo "#!/bin/bash" >/opt/SurfingPi/surfstart
-                  echo "sudo openvpn /etc/openvpn/$udpendpoint" >>/opt/SurfingPi/surfstart
+                  echo "#!/bin/bash" >/opt/SurfingPi/SurfingPi
+                  echo "sudo openvpn /etc/openvpn/$udpendpoint" >>/opt/SurfingPi/SurfingPi
                   echo "Adding to /usr/bin"
                   echo
-                  sudo chmod +x /opt/SurfingPi/surfstart
-                  echo "surfstart created!"
+                  sudo chmod +x /opt/SurfingPi/SurfingPi
+                  echo "SurfingPi script created!"
                   sudo chmod -R 755 /opt/SurfingPi
                   break
             done
@@ -96,3 +96,13 @@ select proto in TCP UDP; do
       esac
       break
 done
+
+echo "finished"
+
+if [[ $(sudo systemctl status SurfingPi.service | grep "active (running)") ]]; then
+      echo "Restarting SurfingPi"
+      SurfingPi stop >/dev/null
+      SurfingPi start >/dev/null
+else
+      echo "No SurfingPi restart required"
+fi
