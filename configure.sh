@@ -1,14 +1,11 @@
 #!/bin/bash
 echo "SurfingPi Configure"
 echo
-if [[ $(ls /etc/openvpn | grep surfshark) ]]
-then
-doit=Y
+if [[ $(ls /etc/openvpn | grep surfshark) ]] ; then
+      doit=Y
 else
-then
-read -n1 -p "Do you want to update surfshark configs first? [y,n]  " doit
+      read -n1 -p "Do you want to update surfshark configs first? [y,n]  " doit
 fi
-
 
 case $doit in
 y | Y)
@@ -37,7 +34,7 @@ echo
 read -p "username:" user_var
 read -p "password:" pass_var
 
-if [ -z "$user_var" ]; then
+if [ -z "$user_var" ] ; then
       echo "Leave user and pass the same"
 else
       echo "Updating user and pass"
@@ -49,7 +46,6 @@ else
 fi
 
 echo
-
 
 echo "Select which protocol to use"
 select proto in TCP UDP; do
