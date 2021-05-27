@@ -2,7 +2,7 @@
 echo "SurfingPi Configure"
 echo
 doit=h
-if [[ $(ls /etc/openvpn | grep surfshark) ]] ; then
+if [[ $(ls /etc/openvpn | grep surfshark) ]]; then
 
       read -n1 -p "Do you want to update surfshark configs first? [y,n]  " doit
 
@@ -25,7 +25,10 @@ y | Y)
       echo "done"
       echo
       ;;
-n | N) echo "Skipping update" ;;
+n | N)
+      echo
+      echo "Skipping update"
+      ;;
 *) echo "Please answer y or n" ;;
 esac
 echo
@@ -38,7 +41,7 @@ echo
 read -p "username:" user_var
 read -p "password:" pass_var
 
-if [ -z "$user_var" ] ; then
+if [ -z "$user_var" ]; then
       echo "Leave user and pass the same"
 else
       echo "Updating user and pass"
