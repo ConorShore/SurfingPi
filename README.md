@@ -19,7 +19,7 @@ Pretty much just the script listed above
 
 Then run configure script with:
   
-    /opt/SurfingPi/configure.sh
+    surfstart -c
    
 This will walk you through getting your credentials, selecting which vpn endpoint you want and automates downloading of the configs.
 Once this is done, your credentials will be stored in ~/.surfshark/surf
@@ -38,7 +38,7 @@ To, for example, change which location you want to connect to, just run the conf
 
 If you're having trouble connecting, try running
 
-    /opt/SurfingPi/update_surf_conf.sh
+    surfstart -r
    
 sometimes an update is required before you can connect to the VPN
 
@@ -46,4 +46,4 @@ sometimes an update is required before you can connect to the VPN
 
 Run the included uninstall script with:
 
-    /opt/SurfingPi/uninstall.sh
+    surfstart -u
