@@ -42,6 +42,6 @@ sudo chmod 644 /etc/systemd/system/SurfingPi.service
 sudo systemctl daemon-reload
 
 sudo chmod +x /usr/bin/SurfingPi
-SurfingPi -c
+bash -c "SurfingPi -c"
 
 
