@@ -19,5 +19,6 @@ sudo git clone https://github.com/ConorShore/SurfingPi.git
 
 sudo cp /opt/SurfingPi/surfpointer.sh /usr/bin/surfstart
 sudo chmod +x /usr/bin/surfstart
+surfstart -c
 
 
