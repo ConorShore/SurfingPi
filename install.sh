@@ -17,10 +17,23 @@ fi
 
 
 cd /opt/
+
+echo "cleaning old versions"
+sudo rm -r ~/.surfshark/
+#remove old versions
+sudo rm /usr/bin/surfstart
+
+sudo rm -r /opt/SurfingPi/
+sudo rm /usr/bin/SurfingPi
+
+sudo systemctl stop SurfingPi.service
+sudo rm /etc/systemd/system/SurfingPi.service
+sudo systemctl daemon-reload
+ls /etc/openvpn/ | grep surfshark | xargs -Ihere sudo rm /etc/openvpn/here
+
 sudo git clone https://github.com/ConorShore/SurfingPi.git
 
-echo "Removing old versions"
-/opt/SurfingPi/uninstall.sh
+
 
 sudo cp /opt/SurfingPi/surfpointer.sh /usr/bin/SurfingPi
 
