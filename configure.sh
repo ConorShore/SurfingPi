@@ -1,15 +1,23 @@
 #!/bin/bash
 echo "SurfingPi Configure"
 echo
+if [[ $(ls /etc/openvpn | grep surfshark) ]]
+then
+doit=Y
+else
+then
 read -n1 -p "Do you want to update surfshark configs first? [y,n]  " doit
+fi
+
+
 case $doit in
 y | Y)
       echo "Updating configs"
       cd /etc/openvpn
       sudo rm *
       sudo wget https://my.surfshark.com/vpn/api/v1/server/configurations
-      sudo unzip configurations
-      sudo rm configurations
+      sudo unzip configurations >/dev/null
+      sudo rm configurations >/dev/null
       echo "Modifiying configs to use userpass file"
 
       sudo grep -rl "auth-user-pass" /etc/openvpn/ | sudo xargs sed -i "s>auth-user-pass>auth-user-pass /home/$USER/.surfshark/surf>g"
