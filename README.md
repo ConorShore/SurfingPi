@@ -3,18 +3,12 @@ Helper scripts for setting up and using SurfShark with a Raspberry Pi. Sets up S
 
 ## Setup
 ### Easy
-Open a terminal window and run this command. 
+Open a terminal window and run these command. 
 
-    curl -sL https://raw.githubusercontent.com/ConorShore/SurfingPi/main/install.sh | bash
-    
-### Long way
-Pretty much just the script listed above
-
-    sudo apt update
-    sudo apt install -y curl unzip openvpn git
-    cd /opt/
-    sudo git clone https://github.com/ConorShore/SurfingPi.git
-    surfshark -c
+    wget https://raw.githubusercontent.com/ConorShore/SurfingPi/main/install.sh
+    chmod +x install.sh
+    ./install.sh
+    rm install.sh
     
 ## Usage
 
@@ -36,7 +30,7 @@ sometimes an update to vpn configs is required before you can connect to the VPN
 
 To reconfigure, run script with:
   
-    surfstart -c
+    SurfingPi -c
    
 This is run automatically with the install script. This will walk you through getting your credentials, selecting which vpn endpoint you want and automates downloading of the configs.
 Once this is done, your credentials will be stored in ~/.surfshark/surf
