@@ -18,6 +18,11 @@ cd /opt/
 sudo git clone https://github.com/ConorShore/SurfingPi.git
 
 sudo cp /opt/SurfingPi/surfpointer.sh /usr/bin/surfstart
+
+sudo cp /opt/SurfingPi/SurfingPi.service /etc/systemd/system/SurfingPi.service
+sudo chmod /etc/systemd/system/SurfingPi.service
+sudo systemctl daemon-reload
+
 sudo chmod +x /usr/bin/surfstart
 surfstart -c
 

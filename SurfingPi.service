@@ -1,0 +1,11 @@
+[Unit]
+Description=Surfing Pi Service
+After=network.target
+
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/surfstart
+
+[Install]
+WantedBy=multi-user.target
