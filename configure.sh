@@ -2,17 +2,15 @@
 echo "SurfingPi Configure"
 echo
 doit=h
-if [[ $(ls /etc/openvpn | grep surfshark) ]]
-then
-      $doit=y
-      echo think file
-else
-      echo nono
+if [[ $(ls /etc/openvpn | grep surfshark) ]] ; then
+
       read -n1 -p "Do you want to update surfshark configs first? [y,n]  " doit
+
+else
+      doit=y
+
 fi
-echo
-echo $doit
-echo
+
 case $doit in
 y | Y)
       echo "Updating configs"
