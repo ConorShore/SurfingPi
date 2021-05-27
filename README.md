@@ -17,14 +17,14 @@ Pretty much just the script listed above
     
 ### Configuration
 
-Then run configure script with:
+To reconfigure, run script with:
   
     surfstart -c
    
-This will walk you through getting your credentials, selecting which vpn endpoint you want and automates downloading of the configs.
+This is run automatically with the install script. This will walk you through getting your credentials, selecting which vpn endpoint you want and automates downloading of the configs.
 Once this is done, your credentials will be stored in ~/.surfshark/surf
 
-This config process will generate a file called surfstart in /usr/bin. This is what you will use to connect to the VPN. 
+This config process will generate a file called surfstart in /usr/bin. This is what you will use to connect to the VPN.
 
 ## Usage
 
@@ -40,7 +40,7 @@ If you're having trouble connecting, try running
 
     surfstart -r
    
-sometimes an update is required before you can connect to the VPN
+sometimes an update to vpn configs is required before you can connect to the VPN
 
 ## Uninstall
 
