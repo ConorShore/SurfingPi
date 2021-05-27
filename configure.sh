@@ -99,10 +99,10 @@ done
 
 echo "finished"
 
-if [[ $(sudo systemctl start SurfingPi.service) ]]; then
-      echo "No SurfingPi require"
-else 
+if [[ $(sudo systemctl status SurfingPi.service | grep "active (running)") ]]; then
       echo "Restarting SurfingPi"
-      SurfingPi stop
-      SurfingPi start
+      SurfingPi stop >/dev/null
+      SurfingPi start >/dev/null
+else
+      echo "No SurfingPi require"
 fi
