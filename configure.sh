@@ -100,6 +100,8 @@ done
 echo "finished"
 
 if [[ $(sudo systemctl start SurfingPi.service) ]]; then
+      echo "No SurfingPi require"
+else 
       echo "Restarting SurfingPi"
       SurfingPi stop
       SurfingPi start
