@@ -96,3 +96,9 @@ select proto in TCP UDP; do
       esac
       break
 done
+
+if [[ $(sudo systemctl start SurfingPi.service) ]]; then
+      echo "Restarting SurfingPi"
+      SurfingPi stop
+      SurfingPi start
+fi
