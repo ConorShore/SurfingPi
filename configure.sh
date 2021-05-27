@@ -45,6 +45,7 @@ if [ -z "$user_var" ]; then
       echo "Leave user and pass the same"
 else
       echo "Updating user and pass"
+      sudo chmod -R 755 /home/$USER/.surfshark
       sudo rm /home/$USER/.surfshark/surf
       mkdir /home/$USER/.surfshark/
       sudo echo $user_var >/home/$USER/.surfshark/surf
@@ -98,7 +99,6 @@ select proto in TCP UDP; do
 done
 
 echo "finished"
-
 if [[ $(sudo systemctl status SurfingPi.service | grep "active (running)") ]]; then
       echo "Restarting SurfingPi"
       SurfingPi stop >/dev/null
@@ -106,3 +106,4 @@ if [[ $(sudo systemctl status SurfingPi.service | grep "active (running)") ]]; t
 else
       echo "No SurfingPi restart required"
 fi
+
