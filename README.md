@@ -1,5 +1,5 @@
 # SurfingPi
-Helper scripts for setting up and using SurfShark with a Raspberry Pi
+Helper scripts for setting up and using SurfShark with a Raspberry Pi. Sets up SurfShark as a service, so can run in the background.
 
 ## Setup
 ### Easy
@@ -19,7 +19,7 @@ Pretty much just the script listed above
 
 Then run configure script with:
   
-    surfstart -c
+    SurfingPi -c
    
 This will walk you through getting your credentials, selecting which vpn endpoint you want and automates downloading of the configs.
 Once this is done, your credentials will be stored in ~/.surfshark/surf
@@ -30,7 +30,7 @@ This config process will generate a file called surfstart in /usr/bin. This is w
 
 To connect to the VPN, simply run this command
 
-    surfstart
+    SurfingPi start
   
 This will connect you with the configurations you entered when you ran ./configure.sh
 
@@ -38,7 +38,7 @@ To, for example, change which location you want to connect to, just run the conf
 
 If you're having trouble connecting, try running
 
-    surfstart -r
+    SurfingPi -r
    
 sometimes an update is required before you can connect to the VPN
 
@@ -46,4 +46,4 @@ sometimes an update is required before you can connect to the VPN
 
 Run the included uninstall script with:
 
-    surfstart -u
+    SurfingPi -u
