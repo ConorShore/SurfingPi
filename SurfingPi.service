@@ -5,7 +5,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/surfstart
+ExecStart=/opt/SurfingPi/surfstart
 
 [Install]
 WantedBy=multi-user.target
