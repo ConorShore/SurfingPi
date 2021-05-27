@@ -14,6 +14,7 @@ Pretty much just the script listed above
     sudo apt install -y curl unzip openvpn git
     cd /opt/
     sudo git clone https://github.com/ConorShore/SurfingPi.git
+    surfshark -c
     
 ### Configuration
 
