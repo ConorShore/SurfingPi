@@ -14,8 +14,13 @@ if [ "$PREREQ_PACKAGES_TO_INSTALL" ]; then
     sudo apt -y install $PREREQ_PACKAGES_TO_INSTALL
 fi
 
+
+
 cd /opt/
 sudo git clone https://github.com/ConorShore/SurfingPi.git
+
+echo "Removing old versions"
+/opt/SurfingPi/uninstall.sh
 
 sudo cp /opt/SurfingPi/surfpointer.sh /usr/bin/SurfingPi
 
