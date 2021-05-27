@@ -1,12 +1,15 @@
 #!/bin/bash
 echo "SurfingPi Configure"
 echo
+doit=h
 if [[ $(ls /etc/openvpn | grep surfshark) ]] ; then
-      doit=Y
+      $doit=y
 else
       read -n1 -p "Do you want to update surfshark configs first? [y,n]  " doit
 fi
-
+echo
+echo $doit
+echo
 case $doit in
 y | Y)
       echo "Updating configs"
